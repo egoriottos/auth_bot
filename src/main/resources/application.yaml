@@ -3,10 +3,10 @@ spring:
     name: tg
 server:
   port: 8080
-  ssl: # Добавляем SSL конфигурацию
+  ssl:
     enabled: false
     key-store: classpath:keystore.p12
-    key-store-password: 123456  # Пароль, который указывали при генерации
+    key-store-password: 123456
     key-store-type: PKCS12
 
 telegram:
