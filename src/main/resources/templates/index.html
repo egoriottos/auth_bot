@@ -11,7 +11,6 @@
 <script>
   document.addEventListener("DOMContentLoaded", function() {
     if (Telegram.WebApp.initData) {
-      // Отправляем POST через fetch
       fetch("/auth/telegram", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
