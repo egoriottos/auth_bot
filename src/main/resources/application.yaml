@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: tg
+server:
+  port: 8080
+  ssl: # Добавляем SSL конфигурацию
+    enabled: false
+    key-store: classpath:keystore.p12
+    key-store-password: 123456  # Пароль, который указывали при генерации
+    key-store-type: PKCS12
+
+telegram:
+  bot_token: 8163556432:AAFMN4cS-hcHmxZqi_hT8aEpYYclMfpeP68
+  username: egoriottos_bot
+  url: https://18ff-46-246-88-107.ngrok-free.app/
