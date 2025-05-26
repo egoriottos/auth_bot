@@ -1,8 +1,3 @@
-Бот для аутентификации пользователя.
-использовал Thymeleaf, Spring Web, telegrambots-spring-boot-starter
-Для установления https включал vpn и использовался ngrok через команду ngrok http 8080, предварительно его установил. Можно вместо ngrok использовать localtunnel(работает без vpn)
-ссылка на бота @egoriottos_bot
-
 # 🤖 Telegram Auth Bot
 
 ![Java](https://img.shields.io/badge/Java-17%2B-blue)
@@ -17,14 +12,17 @@
 - 📊 Отображение профиля пользователя
 - 🛡️ Валидация данных через HMAC-подпись
 - 🌐 Поддержка HTTPS через ngrok/localtunnel
-- Для установления https включал vpn и использовался ngrok через команду ngrok http 8080, предварительно его установил. Можно вместо ngrok использовать localtunnel(работает без vpn)
+- 🐳 Запуск базы данных через docker-compose
+- 💾 Хранение пользователей в PostgreSQL через Spring Data JPA
+- Для установления HTTPS включал VPN и использовался `ngrok http 8080`, предварительно его установив.  
+  Можно вместо ngrok использовать `localtunnel` (работает без VPN)
+- Перед каждым запуском нужно в `application.yml` прописывать новый сгенерированный URL — другого решения не нашёл
 
 ## 🛠 Технологии
 
 - **Backend**: 
   ![Spring Boot](https://img.shields.io/badge/-Spring%20Boot-6DB33F?logo=spring&logoColor=white)
   ![Thymeleaf](https://img.shields.io/badge/-Thymeleaf-005F0F?logo=thymeleaf&logoColor=white)
-  
-🔗 Ссылки
-Бот в Telegram (@egoriottos_bot)
-
+  ![Spring Data JPA](https://img.shields.io/badge/-Spring%20Data%20JPA-blueviolet)
+  ![PostgreSQL](https://img.shields.io/badge/-PostgreSQL-336791?logo=postgresql&logoColor=white)
+  ![Docker](https://img.shields.io/badge/-Docker-2496ED?logo=docker&logoColor=white)
