@@ -21,4 +21,5 @@ server:
 telegram:
   bot_token: 8163556432:AAFMN4cS-hcHmxZqi_hT8aEpYYclMfpeP68
   username: egoriottos_bot
-  url: https://2e9b-80-91-223-75.ngrok-free.app
+  url: https://df80-192-71-247-91.ngrok-free.app
+  auth_data_expire_seconds: 86400

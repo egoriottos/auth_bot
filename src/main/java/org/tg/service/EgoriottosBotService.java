@@ -24,6 +24,10 @@ import java.util.stream.Collectors;
 
 @Service
 public class EgoriottosBotService extends TelegramLongPollingBot {
+
+    @Value("${telegram.auth_data_expire_seconds}")
+    private Long seconds;
+
     @Value("${telegram.username}")
     private String botUsername;
 
@@ -106,6 +110,14 @@ public class EgoriottosBotService extends TelegramLongPollingBot {
             String computedHash = new HmacUtils(HmacAlgorithms.HMAC_SHA_256, secretKey)
                     .hmacHex(dataCheckString);
 
+            long authDate = Long.parseLong(params.get("auth_date"));
+            long currentTime = System.currentTimeMillis() / 1000;
+            boolean isFresh = (currentTime - authDate) <= seconds;
+
+            if (!isFresh) {
+                return false;
+            }
+
             return computedHash.equals(receivedHash);
 
         } catch (Exception e) {
@@ -123,4 +135,5 @@ public class EgoriottosBotService extends TelegramLongPollingBot {
         return new ObjectMapper().readValue(userJson, new TypeReference<>() {
         });
     }
+
 }
