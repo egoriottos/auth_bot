@@ -1,4 +1,4 @@
-package org.tg;
+package org.tg.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -60,10 +60,9 @@ public class EgoriottosBotService extends TelegramLongPollingBot {
         message.setChatId(chatId.toString());
         message.setText("Нажмите кнопку ниже, чтобы войти через Telegram WebApp:");
 
-        // Создаем WebApp кнопку
         InlineKeyboardMarkup markup = new InlineKeyboardMarkup();
         InlineKeyboardButton webAppButton = new InlineKeyboardButton("Войти через Telegram");
-        webAppButton.setWebApp(new WebAppInfo(url));// ← сюда вставь свой URL
+        webAppButton.setWebApp(new WebAppInfo(url));
 
         markup.setKeyboard(List.of(List.of(webAppButton)));
         message.setReplyMarkup(markup);
@@ -79,7 +78,7 @@ public class EgoriottosBotService extends TelegramLongPollingBot {
         return botUsername;
     }
 
-    public boolean validateTelegramData(String initData, String token) {
+    public boolean validateTelegramData(String initData) {
         try {
             String receivedHash = "";
             Map<String, String> params = new HashMap<>();

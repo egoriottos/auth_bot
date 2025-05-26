@@ -1,10 +1,11 @@
-package org.tg;
+package org.tg.config;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.context.annotation.Configuration;
 import org.telegram.telegrambots.meta.TelegramBotsApi;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 import org.telegram.telegrambots.updatesreceivers.DefaultBotSession;
+import org.tg.service.EgoriottosBotService;
 
 @Configuration
 public class TgConfig {

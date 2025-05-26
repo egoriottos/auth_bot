@@ -1,15 +1,24 @@
 spring:
   application:
     name: tg
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    password: user
+    username: user
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/userdb
 server:
   port: 8080
-  ssl: # Добавляем SSL конфигурацию
+  ssl:
     enabled: false
     key-store: classpath:keystore.p12
-    key-store-password: 123456  # Пароль, который указывали при генерации
+    key-store-password: 123456
     key-store-type: PKCS12
 
 telegram:
   bot_token: 8163556432:AAFMN4cS-hcHmxZqi_hT8aEpYYclMfpeP68
   username: egoriottos_bot
-  url: https://18ff-46-246-88-107.ngrok-free.app/
+  url: https://2e9b-80-91-223-75.ngrok-free.app
